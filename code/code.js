@@ -1,3 +1,7 @@
+if(!localStorage.getItem('userTestName')){
+  setLocalStorageUserName();
+}
+
 var peninsularsArray = [
   {name: "Лабрадор",
   country: "Канада",
@@ -41,11 +45,11 @@ var peninsularsArray = [
   longitude: 39,
   url: "images/koljskij.jpg"
   },
-  {name: "Пелопоннес",
+  {name: "Пелопоннесс",
   country: "Россия",
   latitude: 38,
   longitude: 22,
-  url: "images/peloponnes.jpg"
+  url: "images/peloponness.jpg"
   },
   {name: "Калифорния",
   country: "Мексика",
@@ -179,6 +183,11 @@ var dropDownListRightAnswers = [];
 var dropDownListArrayAnswer = [];
 
 
+function setLocalStorageUserName(){
+  var name = prompt("Пожалуйста, представьтесь", "Господин Президент");
+  localStorage.setItem("userTestName", name);
+}
+
 function askQuestion() {
   var question = document.getElementById("question");
   currentQuestion = typeOfQuestion[Math.floor(Math.random() * typeOfQuestion.length)];
@@ -203,7 +212,8 @@ function askQuestionType1(){
   var variants = document.getElementById("variants");
   variants.innerHTML = document.getElementsByClassName("radio")[0].innerHTML;
   fulfillArrayWithRandom();
-
+// Need to write that not "peninsularsArray[varArray[i]].name", but "peninsularsArray[varArray[i]].name[0]"
+// First name is more frequently using
   document.getElementById("firstRadio").innerHTML = peninsularsArray[varArray[0]].name;
   document.getElementById("secondRadio").innerHTML = peninsularsArray[varArray[1]].name;
   document.getElementById("thirdRadio").innerHTML = peninsularsArray[varArray[2]].name;
@@ -227,7 +237,7 @@ function askQuestionType2(){
   variants.innerHTML = document.getElementsByClassName("textArea")[0].innerHTML;
   textQuestion = peninsularsArray[Math.floor(peninsularsArray.length * Math.random())];
   rightTextAnswer = textQuestion.country;
-
+// Same shit as above + [0]
   document.getElementById("textQuestionObject").innerHTML = textQuestion.name;
 }
 
@@ -236,6 +246,8 @@ function askQuestionType3(){
   variants.innerHTML = document.getElementsByClassName("pictureArea")[0].innerHTML;
 
   textQuestion = peninsularsArray[Math.floor(peninsularsArray.length * Math.random())];
+
+  // Maybe it will have to change the type of "rightTextAnswer" from string to array
   rightTextAnswer = textQuestion.name;
   document.getElementById("peninsularImage").src = textQuestion.url;
 }
@@ -259,6 +271,8 @@ function askQuestionType4(){
 function fullfillDropdownURLs(){
   for(var j=0; j<4; j++){
     document.getElementsByClassName("listImage")[j].src = peninsularsArray[varArray[j]].url;
+    // Need to write that not "peninsularsArray[varArray[i]].name", but "peninsularsArray[varArray[i]].name[0]"
+// First name is more frequently using
     dropDownListRightAnswers[j] = peninsularsArray[varArray[j]].name;
   }
 }
@@ -355,7 +369,7 @@ function alertRight(){
 
 function checkIfFinish(){
   if(questionsCounter == numberOfQuestions) {
-    alert("Тест окончен. Количество правильных ответов - "+ rightAnswersCounter);
+    alert("Уважаемый " + localStorage.getItem('userTestName') + "! Тест окончен. Количество правильных ответов - "+ rightAnswersCounter);
     questionsCounter=0;
     rightAnswersCounter = 0;
   } else {

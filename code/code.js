@@ -45,11 +45,11 @@ var peninsularsArray = [
   longitude: 39,
   url: "images/koljskij.jpg"
   },
-  {name: "Пелопоннесс",
+  {name: "Пелопоннес",
   country: "Россия",
   latitude: 38,
   longitude: 22,
-  url: "images/peloponness.jpg"
+  url: "images/peloponnes.jpg"
   },
   {name: "Калифорния",
   country: "Мексика",

@@ -1,391 +1,82 @@
-if(!localStorage.getItem('userTestName')){
-  setLocalStorageUserName();
+.hidden {
+    display: none;
 }
 
-var peninsularsArray = [
-  {name: "Лабрадор",
-  country: "Канада",
-  latitude: 55,
-  longitude: -70,
-  url: "images/labrador.png"
-  },
-  {name: "Пиренейский",
-  country: "Испания",
-  latitude: 40,
-  longitude: -5,
-  url: "images/pirenejskij.jpg"
-  },
-  {name: "Балканский",
-  country: "Греция",
-  latitude: 10,
-  longitude: 12,
-  url: "images/balkanskij.jpg"
-  },
-  {name: "Бретань",
-  country: "Франция",
-  latitude: 3,
-  longitude: 49,
-  url: "images/bretanj.jpg"
-  },
-  {name: "Чукотский",
-  country: "Россия",
-  latitude: 65,
-  longitude: -175,
-  url: "images/chukotka.jpg"
-  },
-  {name: "Ютландия",
-  country: "Дания",
-  latitude: 55,
-  longitude: 10,
-  url: "images/jutlandija.jpg"
-  },
-  {name: "Кольский",
-  country: "Россия",
-  latitude: 69,
-  longitude: 39,
-  url: "images/koljskij.jpg"
-  },
-  {name: "Пелопоннес",
-  country: "Россия",
-  latitude: 38,
-  longitude: 22,
-  url: "images/peloponnes.jpg"
-  },
-  {name: "Калифорния",
-  country: "Мексика",
-  latitude: 27,
-  longitude: -115,
-  url: "images/california.png"
-  },
-  {name: "Флорида",
-  country: "США",
-  latitude: 26,
-  longitude: -82,
-  url: "images/florida.png"
-  },
-  {name: "Юкатан",
-  country: "Мексика",
-  latitude: 20,
-  longitude: -90,
-  url: "images/yukatan.png"
-  },
-  {name: "Аляска",
-  country: "США",
-  latitude: 55,
-  longitude: -160,
-  url: "images/alaska.png"
-  },
-  {name: "Индостан",
-  country: "Индия",
-  latitude: 19,
-  longitude: 80,
-  url: "images/indostan.png"
-  },
-  {name: "Камчатка",
-  country: "Россия",
-  latitude: 55,
-  longitude: 160,
-  url: "images/kamchatka.png"
-  },
-  {name: "Малая Азия",
-  country: "Турция",
-  latitude: 39,
-  longitude: 32,
-  url: "images/malaja_asia.png"
-  },
-  {name: "Таймыр",
-  country: "Россия",
-  latitude: 73,
-  longitude: 100,
-  url: "images/taymyr.png"
-  },
-  {name: "Аппенинский",
-  country: "Италия",
-  latitude: 42,
-  longitude: 15,
-  url: "images/appeninskij.png"
-  },
-  {name: "Малакка",
-  country: "Малайзия",
-  latitude: 7,
-  longitude: 100,
-  url: "images/malakka.png"
-  },
-  {name: "Сомали",
-  country: "Сомали",
-  latitude: 5,
-  longitude: 47,
-  url: "images/somali.png"
-  }
-];
-
-
-var typeOfQuestion = [
-  // {
-  //   id: 1,
-  //   type: 1,
-  //   question: "Какой из этих полуостровов расположен восточнее?",
-  //   parameter: 'longitude',
-  //   val: 1
-  // },
-  // {
-  //   id: 2,
-  //   type: 1,
-  //   question: "Какой из этих полуостровов расположен севернее?",
-  //   parameter: 'latitude',
-  //   val: 1
-  // },
-  {
-    id: 3,
-    type: 2,
-    question: "Какая страна находится на этом полуострове?",
-    parameter: 'country',
-    val: 'country'
-  },
-  // {
-  //   id: 4,
-  //   type: 1,
-  //   question: "Какой из этих полуостровов расположен южнее?",
-  //   parameter: 'latitude',
-  //   val: -1
-  // },
-  // {
-  //   id: 5,
-  //   type: 1,
-  //   question: "Какой из этих полуостровов расположен западнее?",
-  //   parameter: 'longitude',
-  //   val: -1
-  // },
-  {
-    id: 6,
-    type: 3,
-    question: "Как называется этот полуостров?",
-    parameter: 'name',
-    val: 'name'
-  },
-  {
-    id: 12,
-    type: 4,
-    question: "Совмести картинку и объект",
-    parameter: 'name',
-    val: 'name'
-  }
-]
-var numberOfQuestions = 5;
-var questionsCounter = 0;
-var rightAnswersCounter = 0;
-var varArray = [];
-var currentAnswer = '';
-var currentQuestion = {};
-var textQuestion = {};
-var rightTextAnswer = '';
-var dropDownListRightAnswers = [];
-var dropDownListArrayAnswer = [];
-
-
-function setLocalStorageUserName(){
-  var name = prompt("Пожалуйста, представьтесь", "Господин Президент");
-  localStorage.setItem("userTestName", name);
+#variants {
+    display: flex;
+    flex-direction: column;
 }
 
-function askQuestion() {
-  var question = document.getElementById("question");
-  currentQuestion = typeOfQuestion[Math.floor(Math.random() * typeOfQuestion.length)];
-  question.innerHTML = currentQuestion.question;
-  if (currentQuestion.type == 1) {
-    askQuestionType1();
-  }
-  else if (currentQuestion.type == 2) {
-    askQuestionType2();
-  }
-  else if (currentQuestion.type == 3) {
-    askQuestionType3();
-  }
-  else if (currentQuestion.type == 4) {
-    askQuestionType4();
-  }
+.startButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 100px;
 }
 
-
-
-function askQuestionType1(){
-  var variants = document.getElementById("variants");
-  variants.innerHTML = document.getElementsByClassName("radio")[0].innerHTML;
-  fulfillArrayWithRandom();
-// Need to write that not "peninsularsArray[varArray[i]].name", but "peninsularsArray[varArray[i]].name[0]"
-// First name is more frequently using
-  document.getElementById("firstRadio").innerHTML = peninsularsArray[varArray[0]].name;
-  document.getElementById("secondRadio").innerHTML = peninsularsArray[varArray[1]].name;
-  document.getElementById("thirdRadio").innerHTML = peninsularsArray[varArray[2]].name;
-  document.getElementById("fourthRadio").innerHTML = peninsularsArray[varArray[3]].name;
+.letsGo {
+    width: 250px;
+    height: 40px;
+    border-style: none;
+    background-color: rgb(4, 122, 4);
+    color: rgb(255, 255, 255);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    font-weight: 300;
 }
 
-function fulfillArrayWithRandom(){
-  for(var i=0;i<4;i++){
-    var randomVar = Math.floor(peninsularsArray.length * Math.random());
-    while(varArray.some(function(number) {
-      return number == randomVar;
-    })){
-      randomVar = Math.floor(peninsularsArray.length * Math.random());
-    }
-    varArray.push(randomVar);
-  }
+.questionField {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-top: 50px;
 }
 
-function askQuestionType2(){
-  var variants = document.getElementById("variants");
-  variants.innerHTML = document.getElementsByClassName("textArea")[0].innerHTML;
-  textQuestion = peninsularsArray[Math.floor(peninsularsArray.length * Math.random())];
-  rightTextAnswer = textQuestion.country;
-// Same shit as above + [0]
-  document.getElementById("textQuestionObject").innerHTML = textQuestion.name;
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
-function askQuestionType3(){
-  var variants = document.getElementById("variants");
-  variants.innerHTML = document.getElementsByClassName("pictureArea")[0].innerHTML;
-
-  textQuestion = peninsularsArray[Math.floor(peninsularsArray.length * Math.random())];
-
-  // Maybe it will have to change the type of "rightTextAnswer" from string to array
-  rightTextAnswer = textQuestion.name;
-  document.getElementById("peninsularImage").src = textQuestion.url;
+#question {
+    font-size: 20px;
+    font-weight: 300;
+    font-family: Arial, sans-serif;
+    color: black;
 }
 
-
-
-function askQuestionType4(){
-  var variants = document.getElementById("variants");
-  variants.innerHTML = document.getElementsByClassName("dropDownList")[0].innerHTML;
-  fulfillArrayWithRandom();
- 
-  fullfillDropdownURLs();
-  varArray.sort();
-
-  fulfillOptions();
-  for(var i=0; i<4; i++){
-    document.getElementsByClassName("listPictureVariant")[i].innerHTML = document.getElementsByClassName("selectField")[0].innerHTML;
-  }
+.answer {
+    width: 100px;
+    height: 40px;
+    border-style: none;
+    background-color: rgb(4, 122, 4);
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    font-weight: 100;
+    font-family: Arial, sans-serif;
 }
 
-function fullfillDropdownURLs(){
-  for(var j=0; j<4; j++){
-    document.getElementsByClassName("listImage")[j].src = peninsularsArray[varArray[j]].url;
-    // Need to write that not "peninsularsArray[varArray[i]].name", but "peninsularsArray[varArray[i]].name[0]"
-// First name is more frequently using
-    dropDownListRightAnswers[j] = peninsularsArray[varArray[j]].name;
-  }
+.textQuestionPadding {
+    padding-top: 20px;
 }
 
-function fulfillOptions(){
-  for(var k=0; k<4; k++){
-    document.getElementsByClassName("option")[k].innerHTML = peninsularsArray[varArray[k]].name;
-    document.getElementsByClassName("option")[k].value = peninsularsArray[varArray[k]].name;
-  }
+.leftPadding {
+    padding-left: 20px;
 }
 
-function sendPaginationAnswer(){
-  for(var i=0; i<4; i++){
-    if(document.getElementsByClassName("radioButton")[i].checked==true){
-      currentAnswer = peninsularsArray[varArray[i]].name;
-      break
-    }
-  }
-  detectRightAnswer();
+.dropdownColumn {
+    justify-content: flex-start;
 }
 
-function sendTextAnswer(){
-  currentAnswer = document.getElementById("textField").value;
-  detectRightAnswer();
+.finalWindow {
+    width: 300px;
+    font-size: 14px;
+    visibility: hidden;
+    position: absolute;
+    top: 200px;
 }
 
-function sendImageAnswer(){
-  currentAnswer = document.getElementById("textPicture").value;
-  detectRightAnswer();
-}
-
-function sendDropdownListAnswer(){
-  for(var i=0;i<4;i++){
-    var s = document.getElementsByClassName("selectBlock")[i];
-    dropDownListArrayAnswer[i] = s.options[s.selectedIndex].value;
-  }
-  detectRightAnswer();
-}
-
-function detectRightAnswer() {
-  if (currentQuestion.type == 1) {
-    checkType1();
-  }
-  else if(currentQuestion.type == 2) {
-    checkType2();
-  }
-  else if (currentQuestion.type == 3) {
-    checkType3();
-  }
-  else if (currentQuestion.type == 4) {
-    checkType4();
-  }
-}
-
-function checkType1(){
-  var parameter = currentQuestion.parameter;
-  var value = currentQuestion.val;
-  var currentNeededName = '';
-  var currentValue = -180;
-  for(var i = 0; i<4; i++){
-    if(peninsularsArray[varArray[i]][parameter] * value > currentValue){
-      currentValue = peninsularsArray[varArray[i]][parameter] * value;
-      currentNeededName = peninsularsArray[varArray[i]].name;
-    }
-  }
-
-  currentNeededName == currentAnswer ? alertRight() : alert("мимо. правильный ответ - "+ currentNeededName);
-  clearField();
-  checkIfFinish();
-}
-
-function checkType2(){
-  rightTextAnswer == currentAnswer ? alertRight() : alert("мимо. правильный ответ - "+ rightTextAnswer);
-  clearField();
-  checkIfFinish();
-}
-
-function checkType3(){
-  textQuestion.name == currentAnswer ? alertRight() : alert("мимо. правильный ответ - "+ rightTextAnswer);
-  clearField();
-  checkIfFinish();
-}
-
-function checkType4(){
-  dropDownListArrayAnswer.join("") == dropDownListRightAnswers.join("") ? alertRight() : alert("мимо. правильный ответ - "+dropDownListRightAnswers);
-  clearField();
-  checkIfFinish();
-}
-
-function alertRight(){
-  alert("верно!");
-  rightAnswersCounter++;
-}
-
-function checkIfFinish(){
-  if(questionsCounter == numberOfQuestions) {
-    alert("Уважаемый " + localStorage.getItem('userTestName') + "! Тест окончен. Количество правильных ответов - "+ rightAnswersCounter);
-    questionsCounter=0;
-    rightAnswersCounter = 0;
-  } else {
-    askQuestion();
-  }
-}
-
-function clearField(){
-  document.getElementById("question").innerHTML = "";
-  document.getElementById("variants").innerHTML = "";
-  varArray = [];
-  currentAnswer = '';
-  rightTextAnswer = '';
-  currentQuestion = {};
-  questionsCounter++;
-  textQuestion = {};
-  dropDownListArrayAnswer = [];
-  dropDownListRightAnswers = [];
+.congratulations{
+    flex-direction: column;
+    justify-content: center;
 }

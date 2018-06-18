@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" media="screen" href="css/geo-test.css" />
+  <title>Document</title>
+</head>
+<body>
+  <div class="startButton">
+    <input class="letsGo" type="button" name="startTest" value="Погнали" onclick="askQuestion()">
+  </div>
+  <div class="wrapper">
+    <div class="questionField">
+      <div class="wrapper">
+          <p id="question"></p>
+      </div>
+      <div class="wrapper">
+          <p id="variants"></p>
+      </div>
+    </div>
+  </div>
+  <div class="hidden">
+    <div class="radio">
+      <p>
+        <label><input type='radio'  class="radioButton" name='pag' checked ><span id="firstRadio"></span></label>
+        <label><input type='radio'  class="radioButton" name='pag' ><span id="secondRadio"></span></label>
+        <label><input type='radio'  class="radioButton" name='pag' ><span id="thirdRadio"></span></label>
+        <label><input type='radio'  class="radioButton" name='pag' ><span id="fourthRadio"></span></label>
+      </p>
+      <div class="wrapper">
+          <input class="answer" type="button" name="answerTheQuestion" value="Ответить" onclick="sendPaginationAnswer()">
+      </div>
+    </div>
+    <div class="textArea">
+      <div class="wrapper textQuestionPadding">
+          <span id ="textQuestionObject"></span>
+      </div>
+      <div id="text" class="wrapper textQuestionPadding">
+          <input type='text'  id ="textField" name='text'>
+      </div>
+      <div class="wrapper textQuestionPadding">
+        <input class="answer" type="button" name="answerTheQuestion" value="Ответить" onclick="sendTextAnswer()">
+      </div>
+    </div>
+    <div class="pictureArea">
+      <div class="wrapper">
+        <img id="peninsularImage" src="" height="300px" width="300px">
+      </div>
+      <div id="text" class="wrapper textQuestionPadding">
+        <input type='text' id="textPicture" name='text'>
+      </div>
+      <div class="wrapper textQuestionPadding">
+        <input class="answer" type="button" name="answerTheQuestion" value="Ответить" onclick="sendImageAnswer()">
+      </div>
+    </div>
+    <div class="dropDownList">
+      <div class="wrapper">
+        <div class="listLine">
+          <div class="listPicture">
+            <img class="listImage" src="" height="200px" width="200px">
+          </div>
+          <div class="listPictureVariant">
+
+          </div>
+        </div>
+        <div class="listLine leftPadding">
+          <div class="listPicture">
+            <img class="listImage" src="" height="200px" width="200px">
+          </div>
+          <div class="listPictureVariant">
+
+          </div>
+        </div>
+        <div class="listLine leftPadding">
+          <div class="listPicture">
+            <img class="listImage" src="" height="200px" width="200px">
+          </div>
+          <div class="listPictureVariant">
+
+          </div>
+        </div>
+        <div class="listLine leftPadding">
+          <div class="listPicture">
+            <img class="listImage" src="" height="200px" width="200px">
+          </div>
+          <div class="listPictureVariant">
+
+          </div>
+        </div>
+      </div>
+      <div class="wrapper textQuestionPadding">
+        <input class="answer" type="button" name="answerTheQuestion" value="Ответить" onclick="sendDropdownListAnswer()">
+      </div>
+    </div>
+    <div class="selectField">
+      <select class = "selectBlock">
+        <option class="option" value="" selected></option>
+        <option class="option" value=""></option>
+        <option class="option" value=""></option>
+        <option class="option" value=""></option>
+      </select>
+    </div>
+  </div>
+</body>
+<script src="code/code.js">
+
+</script>
+</html>

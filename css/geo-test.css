@@ -63,3 +63,20 @@
 .leftPadding {
     padding-left: 20px;
 }
+
+.dropdownColumn {
+    justify-content: flex-start;
+}
+
+.finalWindow {
+    width: 300px;
+    font-size: 14px;
+    visibility: hidden;
+    position: absolute;
+    top: 200px;
+}
+
+.congratulations{
+    flex-direction: column;
+    justify-content: center;
+}

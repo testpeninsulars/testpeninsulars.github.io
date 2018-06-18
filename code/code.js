@@ -5,6 +5,48 @@ var peninsularsArray = [
   longitude: -70,
   url: "images/labrador.png"
   },
+  {name: "Пиренейский",
+  country: "Испания",
+  latitude: 40,
+  longitude: -5,
+  url: "images/pirenejskij.jpg"
+  },
+  {name: "Балканский",
+  country: "Греция",
+  latitude: 10,
+  longitude: 12,
+  url: "images/balkanskij.jpg"
+  },
+  {name: "Бретань",
+  country: "Франция",
+  latitude: 3,
+  longitude: 49,
+  url: "images/bretanj.jpg"
+  },
+  {name: "Чукотский",
+  country: "Россия",
+  latitude: 65,
+  longitude: -175,
+  url: "images/chukotka.jpg"
+  },
+  {name: "Ютландия",
+  country: "Дания",
+  latitude: 55,
+  longitude: 10,
+  url: "images/jutlandija.jpg"
+  },
+  {name: "Кольский",
+  country: "Россия",
+  latitude: 69,
+  longitude: 39,
+  url: "images/koljskij.jpg"
+  },
+  {name: "Пелопоннесс",
+  country: "Россия",
+  latitude: 38,
+  longitude: 22,
+  url: "images/peloponness.jpg"
+  },
   {name: "Калифорния",
   country: "Мексика",
   latitude: 27,
@@ -72,6 +114,8 @@ var peninsularsArray = [
   url: "images/somali.png"
   }
 ];
+
+
 var typeOfQuestion = [
   // {
   //   id: 1,
@@ -108,43 +152,8 @@ var typeOfQuestion = [
   //   parameter: 'longitude',
   //   val: -1
   // },
-  // {
-  //   id: 6,
-  //   type: 3,
-  //   question: "Как называется этот полуостров?",
-  //   parameter: 'name',
-  //   val: 'name'
-  // },
-  // {
-  //   id: 7,
-  //   type: 3,
-  //   question: "Как называется этот полуостров?",
-  //   parameter: 'name',
-  //   val: 'name'
-  // },
-  // {
-  //   id: 8,
-  //   type: 3,
-  //   question: "Как называется этот полуостров?",
-  //   parameter: 'name',
-  //   val: 'name'
-  // },
-  // {
-  //   id: 9,
-  //   type: 3,
-  //   question: "Как называется этот полуостров?",
-  //   parameter: 'name',
-  //   val: 'name'
-  // },
-  // {
-  //   id: 10,
-  //   type: 3,
-  //   question: "Как называется этот полуостров?",
-  //   parameter: 'name',
-  //   val: 'name'
-  // },
   {
-    id: 11,
+    id: 6,
     type: 3,
     question: "Как называется этот полуостров?",
     parameter: 'name',

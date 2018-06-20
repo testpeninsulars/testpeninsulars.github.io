@@ -119,6 +119,33 @@ var peninsularsArray = [
   }
 ];
 
+var islandsArray = [
+  {name: ["Сицилия", " Сицилия", "Сицилия ", "сицилия ", " сицилия", "сицилия"],
+  country: ["Италия", "Италия ", " Италия", "италия", " италия", "италия "],
+  latitude: 0,
+  longitude: 0,
+  url: "images/islands/sicilia.jpg"
+  },
+  {name: ["Сардиния", " Сардиния", "Сардиния ", "сардиния ", " сардиния", "сардиния"],
+  country: ["Италия", "Италия ", " Италия", "италия", " италия", "италия "],
+  latitude: 0,
+  longitude: 0,
+  url: "images/islands/sardinia.jpg"
+  },
+  {name: ["Корсика", " Корсика", "Корсика ", "корсика ", " корсика", "корсика"],
+  country: ["Франция", "Франция ", " Франция", "франция", " франция", "франция "],
+  latitude: 0,
+  longitude: 0,
+  url: "images/islands/corsica.jpg"
+  },
+  {name: ["Кипр", " Кипр", "Кипр ", "кипр ", " кипр", "кипр"],
+  country: ["Кипр", " Кипр", "Кипр ", "кипр ", " кипр", "кипр"],
+  latitude: 0,
+  longitude: 0,
+  url: "images/islands/cypr.jpg"
+  }
+];
+
 
 var typeOfQuestion = [
   // {
@@ -138,7 +165,7 @@ var typeOfQuestion = [
   {
     id: 3,
     type: 2,
-    question: "Какая страна находится на этом полуострове?",
+    question: "Какая страна находится на этом объекте?",
     parameter: 'country',
     val: 'country'
   },
@@ -159,7 +186,7 @@ var typeOfQuestion = [
   {
     id: 6,
     type: 3,
-    question: "Как называется этот полуостров?",
+    question: "Как называется этот объект?",
     parameter: 'name',
     val: 'name'
   },
@@ -182,6 +209,7 @@ var rightTextAnswer = '';
 var dropDownListRightAnswers = [];
 var dropDownListArrayAnswer = [];
 var rightArrayAnswer = [];
+var dataArray = [];
 
 
 function setLocalStorageUserName(){
@@ -193,6 +221,12 @@ function askQuestion() {
   var question = document.getElementById("question");
   currentQuestion = typeOfQuestion[Math.floor(Math.random() * typeOfQuestion.length)];
   question.innerHTML = currentQuestion.question;
+  if(Math.random()>0.5){
+    dataArray = peninsularsArray;
+  } else {
+    dataArray = islandsArray;
+  }
+
   if (currentQuestion.type == 1) {
     askQuestionType1();
   }
@@ -213,21 +247,19 @@ function askQuestionType1(){
   var variants = document.getElementById("variants");
   variants.innerHTML = document.getElementsByClassName("radio")[0].innerHTML;
   fulfillArrayWithRandom();
-// Need to write that not "peninsularsArray[varArray[i]].name", but "peninsularsArray[varArray[i]].name[0]"
-// First name is more frequently using
-  document.getElementById("firstRadio").innerHTML = peninsularsArray[varArray[0]].name;
-  document.getElementById("secondRadio").innerHTML = peninsularsArray[varArray[1]].name;
-  document.getElementById("thirdRadio").innerHTML = peninsularsArray[varArray[2]].name;
-  document.getElementById("fourthRadio").innerHTML = peninsularsArray[varArray[3]].name;
+  document.getElementById("firstRadio").innerHTML = dataArray[varArray[0]].name;
+  document.getElementById("secondRadio").innerHTML = dataArray[varArray[1]].name;
+  document.getElementById("thirdRadio").innerHTML = dataArray[varArray[2]].name;
+  document.getElementById("fourthRadio").innerHTML = dataArray[varArray[3]].name;
 }
 
 function fulfillArrayWithRandom(){
   for(var i=0;i<4;i++){
-    var randomVar = Math.floor(peninsularsArray.length * Math.random());
+    var randomVar = Math.floor(dataArray.length * Math.random());
     while(varArray.some(function(number) {
       return number == randomVar;
     })){
-      randomVar = Math.floor(peninsularsArray.length * Math.random());
+      randomVar = Math.floor(dataArray.length * Math.random());
     }
     varArray.push(randomVar);
   }
@@ -236,9 +268,8 @@ function fulfillArrayWithRandom(){
 function askQuestionType2(){
   var variants = document.getElementById("variants");
   variants.innerHTML = document.getElementsByClassName("textArea")[0].innerHTML;
-  textQuestion = peninsularsArray[Math.floor(peninsularsArray.length * Math.random())];
+  textQuestion = dataArray[Math.floor(dataArray.length * Math.random())];
   rightArrayAnswer = textQuestion.country;
-// Same shit as above + [0]
   document.getElementById("textQuestionObject").innerHTML = textQuestion.name[0];
 }
 
@@ -246,9 +277,8 @@ function askQuestionType3(){
   var variants = document.getElementById("variants");
   variants.innerHTML = document.getElementsByClassName("pictureArea")[0].innerHTML;
 
-  textQuestion = peninsularsArray[Math.floor(peninsularsArray.length * Math.random())];
+  textQuestion = dataArray[Math.floor(dataArray.length * Math.random())];
 
-  // Maybe it will have to change the type of "rightTextAnswer" from string to array
   rightArrayAnswer = textQuestion.name;
   document.getElementById("peninsularImage").src = textQuestion.url;
 }
@@ -271,24 +301,22 @@ function askQuestionType4(){
 
 function fullfillDropdownURLs(){
   for(var j=0; j<4; j++){
-    document.getElementsByClassName("listImage")[j].src = peninsularsArray[varArray[j]].url;
-    // Need to write that not "peninsularsArray[varArray[i]].name", but "peninsularsArray[varArray[i]].name[0]"
-// First name is more frequently using
-    dropDownListRightAnswers[j] = peninsularsArray[varArray[j]].name[0];
+    document.getElementsByClassName("listImage")[j].src = dataArray[varArray[j]].url;
+    dropDownListRightAnswers[j] = dataArray[varArray[j]].name[0];
   }
 }
 
 function fulfillOptions(){
   for(var k=0; k<4; k++){
-    document.getElementsByClassName("option")[k].innerHTML = peninsularsArray[varArray[k]].name[0];
-    document.getElementsByClassName("option")[k].value = peninsularsArray[varArray[k]].name[0];
+    document.getElementsByClassName("option")[k].innerHTML = dataArray[varArray[k]].name[0];
+    document.getElementsByClassName("option")[k].value = dataArray[varArray[k]].name[0];
   }
 }
 
 function sendPaginationAnswer(){
   for(var i=0; i<4; i++){
     if(document.getElementsByClassName("radioButton")[i].checked==true){
-      currentAnswer = peninsularsArray[varArray[i]].name;
+      currentAnswer = dataArray[varArray[i]].name;
       break
     }
   }
@@ -334,9 +362,9 @@ function checkType1(){
   var currentNeededName = '';
   var currentValue = -180;
   for(var i = 0; i<4; i++){
-    if(peninsularsArray[varArray[i]][parameter] * value > currentValue){
-      currentValue = peninsularsArray[varArray[i]][parameter] * value;
-      currentNeededName = peninsularsArray[varArray[i]].name;
+    if(dataArray[varArray[i]][parameter] * value > currentValue){
+      currentValue = dataArray[varArray[i]][parameter] * value;
+      currentNeededName = dataArray[varArray[i]].name;
     }
   }
 
@@ -407,6 +435,7 @@ function checkRank(){
 function clearField(){
   document.getElementById("question").innerHTML = "";
   document.getElementById("variants").innerHTML = "";
+  dataArray = [];
   varArray = [];
   rightArrayAnswer =[];
   currentAnswer = '';

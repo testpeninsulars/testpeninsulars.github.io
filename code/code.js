@@ -3,116 +3,116 @@ if(!localStorage.getItem('userTestName')){
 }
 
 var peninsularsArray = [
-  {name: "Лабрадор",
-  country: "Канада",
+  {name: ["Лабрадор", "лабрадор", "лабрадор ", "Лабрадор ", " лабрадор", " Лабрадор"],
+  country: ["Канада", "канада", " Канада", " канада", "Канада ", "канада "],
   latitude: 55,
   longitude: -70,
   url: "images/labrador.png"
   },
-  {name: "Пиренейский",
-  country: "Испания",
+  {name: ["Пиренейский", " Пиренейский", "Пиренейский ", "пиренейский", " пиренейский", "пиренейский "],
+  country: ["Испания", "Испания ", " Испания", "испания", "испания ", " испания", "Португалия", " Португалия", "Португалия ", "португалия", "португалия ", " португалия", "Андорра", " Андорра", "Андорра ", "андорра", " андорра", "андорра "],
   latitude: 40,
   longitude: -5,
   url: "images/pirenejskij.jpg"
   },
-  {name: "Балканский",
-  country: "Греция",
+  {name: ["Балканский", " Балканский", "Балканский ", "балканский", " балканский", "балканский ", "Балканы", " Балканы", "Балканы ", "балканы", " балканы", "балканы "],
+  country: ["Греция", " Греция", "Греция ", "греция", " греция", "греция ", "Албания", "албания", " Албания", "Албания ", " албания", "албания ", "Болгария", " Болгария", "Болгария ", "болгария", " болгария", "болгария ", "Босния и Герцеговина", "Босния и герцеговина", "босния и герцеговина", "Италия", "италия", "Македония", "македония", "Румыния", "румыния", "Сербия", "сербия", "Словения", "словения", "Турция", "турция", "Хорватия", "хорватия", "Черногория", "черногория" ],
   latitude: 10,
   longitude: 12,
   url: "images/balkanskij.jpg"
   },
-  {name: "Бретань",
-  country: "Франция",
+  {name: ["Бретань", " Бретань", "Бретань ", "бретань", " бретань", "бретань "],
+  country: ["Франция", "Франция ", " Франция", "франция", " франция", "франция "],
   latitude: 3,
   longitude: 49,
   url: "images/bretanj.jpg"
   },
-  {name: "Чукотский",
-  country: "Россия",
+  {name: ["Чукотский", " Чукотский", "Чукотский ", "чукотский", " чукотский", "чукотский ", "Чукотка", " Чукотка", "Чукотка ", "чукотка", " чукотка", "чукотка "],
+  country: ["Россия", " Россия", "Россия ", "россия", " россия", "россия ", "РФ", "Рф", "рф", "Российская федерация", "Российская Федерация", "российская федерация"],
   latitude: 65,
   longitude: -175,
   url: "images/chukotka.jpg"
   },
-  {name: "Ютландия",
-  country: "Дания",
+  {name: ["Ютландия", " Ютландия", "Ютландия ", "ютландия", " ютландия", "ютландия ", "ютландский", " ютландский", "ютландский ", "Ютландский", " Ютландский", "Ютландский "],
+  country: ["Дания", " Дания", "Дания ", "дания", " дания", "дания "],
   latitude: 55,
   longitude: 10,
   url: "images/jutlandija.jpg"
   },
-  {name: "Кольский",
-  country: "Россия",
+  {name: ["Кольский", "Кольский ", " Кольский", "кольский", " кольский", "кольский "],
+  country: ["Россия", " Россия", "Россия ", "россия", " россия", "россия ", "РФ", "Рф", "рф", "Российская федерация", "Российская Федерация", "российская федерация"],
   latitude: 69,
   longitude: 39,
   url: "images/koljskij.jpg"
   },
-  {name: "Пелопоннес",
-  country: "Россия",
+  {name: ["Пелопоннес", " Пелопоннес", "Пелопоннес ", "пелопоннес", " пелопоннес", "пелопоннес ", "Пелопоннесский", " Пелопоннесский", "Пелопоннесский ", "пелопоннесский", " пелопоннесский", "пелопоннесский "],
+  country: ["Греция", " Греция", "Греция ", "греция", " греция", "греция "],
   latitude: 38,
   longitude: 22,
   url: "images/peloponnes.jpg"
   },
-  {name: "Калифорния",
-  country: "Мексика",
+  {name: ["Калифорния", " Калифорния", "Калифорния ", "калифорния", " калифорния", "калифорния ", "Калифорнийский", " Калифорнийский", "Калифорнийский ", "калифорнийский", " калифорнийский", "калифорнийский "],
+  country: ["Мексика", " Мексика", "Мексика ", "мексика", " мексика", "мексика "],
   latitude: 27,
   longitude: -115,
   url: "images/california.png"
   },
-  {name: "Флорида",
-  country: "США",
+  {name: ["Флорида", " Флорида", "Флорида ", "флорида", "флорида ", " флорида"],
+  country: ["США", " США", "США ", "сша", " сша", "сша ", "Сша", " Сша", "Сша "],
   latitude: 26,
   longitude: -82,
   url: "images/florida.png"
   },
-  {name: "Юкатан",
-  country: "Мексика",
+  {name: ["Юкатан", "Юкатан ", " Юкатан", "юкатан", " юкатан", "юкатан ", "Юкатанский", "Юкатанский ", " Юкатанский", "юкатанский", " юкатанский", "юкатанский "],
+  country: ["Мексика", " Мексика", "Мексика ", "мексика", " мексика", "мексика "],
   latitude: 20,
   longitude: -90,
   url: "images/yukatan.png"
   },
-  {name: "Аляска",
-  country: "США",
+  {name: ["Аляска", "Аляска ", " Аляска", "аляска", " аляска", "аляска ", "Аляскинский", "Аляскинский ", " Аляскинский", "аляскинский", " аляскинский", "аляскинский "],
+  country: ["США", " США", "США ", "сша", " сша", "сша ", "Сша", " Сша", "Сша "],
   latitude: 55,
   longitude: -160,
   url: "images/alaska.png"
   },
-  {name: "Индостан",
-  country: "Индия",
+  {name: ["Индостан", "Индостан ", " Индостан", "индостан", " индостан", "индостан ", "Индостанский", "Индостанский ", " Индостанский", "индостанский", " индостанский", "индостанский "],
+  country: ["Индия", " Индия", "Индия ", "индия", " индия", "индия "],
   latitude: 19,
   longitude: 80,
   url: "images/indostan.png"
   },
-  {name: "Камчатка",
-  country: "Россия",
+  {name: ["Камчатка", " Камчатка", "Камчатка ", "камчатка", " камчатка", "камчатка ", "Камчатский", " Камчатский", "Камчатский ", "камчатский", " камчатский", "камчатский "],
+  country: ["Россия", " Россия", "Россия ", "россия", " россия", "россия ", "РФ", "Рф", "рф", "Российская федерация", "Российская Федерация", "российская федерация"],
   latitude: 55,
   longitude: 160,
   url: "images/kamchatka.png"
   },
-  {name: "Малая Азия",
-  country: "Турция",
+  {name: ["Малая Азия", "Малая Азия ", "Малая азия", "Малая азия ", "малая азия", "малая азия ", "Малоазиатский", "Малоазиатский ", "малоазиатский", "малоазиатский ", " малоазиатский", " Малоазиатский"],
+  country: ["Турция", " Турция", "Турция ", "турция", " турция", "турция ", "Турецкая республика", "Турецкая Республика", "Турецкая республика ", "Турецкая Республика ", "турецкая республика", "турецкая республика "],
   latitude: 39,
   longitude: 32,
   url: "images/malaja_asia.png"
   },
-  {name: "Таймыр",
-  country: "Россия",
+  {name: ["Таймыр", " Таймыр", "Таймыр ", "таймыр", " таймыр", "таймыр ", "Таймырский", " Таймырский", "Таймырский ", "таймырский", " таймырский", "таймырский "],
+  country: ["Россия", " Россия", "Россия ", "россия", " россия", "россия ", "РФ", "Рф", "рф", "Российская федерация", "Российская Федерация", "российская федерация"],
   latitude: 73,
   longitude: 100,
   url: "images/taymyr.png"
   },
-  {name: "Аппенинский",
-  country: "Италия",
+  {name: ["Аппенинский", "Аппенинский ", " Аппенинский", "аппенинский", " аппенинский", "аппенинский ", "Аппенины", "Аппенины ", " Аппенины", "аппенины", " аппенины", "аппенины "],
+  country: ["Италия", "Италия ", " Италия", "италия", " италия", "италия "],
   latitude: 42,
   longitude: 15,
   url: "images/appeninskij.png"
   },
-  {name: "Малакка",
-  country: "Малайзия",
+  {name: ["Малакка", "Малакка ", " Малакка", "малакка", " малакка", "малакка ", "Малаккский", "Малаккский ", " Малаккский", "малаккский", " малаккский", "малаккский "],
+  country: ["Малайзия", "малайзия", " Малайзия", "Малайзия ", " малайзия", "малайзия ", "Мьянма", " Мьянма", "Мьянма ", "мьянма", " мьянма", "мьянма ", "Таиланд", "Таиланд ", " Таиланд", "таиланд", " таиланд", "таиланд "],
   latitude: 7,
   longitude: 100,
   url: "images/malakka.png"
   },
-  {name: "Сомали",
-  country: "Сомали",
+  {name: ["Сомали", "сомали", " сомали", "сомали ", " Сомали", "Сомали ", "Сомалийский", "сомалийский", " сомалийский", "сомалийский ", " Сомалийский", "Сомалийский "],
+  country: ["Сомали", "сомали", " сомали", "сомали ", " Сомали", "Сомали ", "Эфиопия", " Эфиопия", "Эфиопия ", "эфиопия", " эфиопия", "эфиопия "],
   latitude: 5,
   longitude: 47,
   url: "images/somali.png"
@@ -181,6 +181,7 @@ var textQuestion = {};
 var rightTextAnswer = '';
 var dropDownListRightAnswers = [];
 var dropDownListArrayAnswer = [];
+var rightArrayAnswer = [];
 
 
 function setLocalStorageUserName(){
@@ -236,9 +237,9 @@ function askQuestionType2(){
   var variants = document.getElementById("variants");
   variants.innerHTML = document.getElementsByClassName("textArea")[0].innerHTML;
   textQuestion = peninsularsArray[Math.floor(peninsularsArray.length * Math.random())];
-  rightTextAnswer = textQuestion.country;
+  rightArrayAnswer = textQuestion.country;
 // Same shit as above + [0]
-  document.getElementById("textQuestionObject").innerHTML = textQuestion.name;
+  document.getElementById("textQuestionObject").innerHTML = textQuestion.name[0];
 }
 
 function askQuestionType3(){
@@ -248,7 +249,7 @@ function askQuestionType3(){
   textQuestion = peninsularsArray[Math.floor(peninsularsArray.length * Math.random())];
 
   // Maybe it will have to change the type of "rightTextAnswer" from string to array
-  rightTextAnswer = textQuestion.name;
+  rightArrayAnswer = textQuestion.name;
   document.getElementById("peninsularImage").src = textQuestion.url;
 }
 
@@ -273,14 +274,14 @@ function fullfillDropdownURLs(){
     document.getElementsByClassName("listImage")[j].src = peninsularsArray[varArray[j]].url;
     // Need to write that not "peninsularsArray[varArray[i]].name", but "peninsularsArray[varArray[i]].name[0]"
 // First name is more frequently using
-    dropDownListRightAnswers[j] = peninsularsArray[varArray[j]].name;
+    dropDownListRightAnswers[j] = peninsularsArray[varArray[j]].name[0];
   }
 }
 
 function fulfillOptions(){
   for(var k=0; k<4; k++){
-    document.getElementsByClassName("option")[k].innerHTML = peninsularsArray[varArray[k]].name;
-    document.getElementsByClassName("option")[k].value = peninsularsArray[varArray[k]].name;
+    document.getElementsByClassName("option")[k].innerHTML = peninsularsArray[varArray[k]].name[0];
+    document.getElementsByClassName("option")[k].value = peninsularsArray[varArray[k]].name[0];
   }
 }
 
@@ -345,13 +346,17 @@ function checkType1(){
 }
 
 function checkType2(){
-  rightTextAnswer == currentAnswer ? alertRight() : alert("мимо. правильный ответ - "+ rightTextAnswer);
+  rightArrayAnswer.some(function(rightAnswer){
+    return rightAnswer == currentAnswer
+  }) ? alertRight() : alert("мимо. правильный ответ - "+ rightArrayAnswer[0]);
   clearField();
   checkIfFinish();
 }
 
 function checkType3(){
-  textQuestion.name == currentAnswer ? alertRight() : alert("мимо. правильный ответ - "+ rightTextAnswer);
+  rightArrayAnswer.some(function(rightAnswer){
+    return rightAnswer == currentAnswer
+  }) ? alertRight() : alert("мимо. правильный ответ - "+ rightArrayAnswer[0]);
   clearField();
   checkIfFinish();
 }
@@ -403,6 +408,7 @@ function clearField(){
   document.getElementById("question").innerHTML = "";
   document.getElementById("variants").innerHTML = "";
   varArray = [];
+  rightArrayAnswer =[];
   currentAnswer = '';
   rightTextAnswer = '';
   currentQuestion = {};
@@ -411,3 +417,4 @@ function clearField(){
   dropDownListArrayAnswer = [];
   dropDownListRightAnswers = [];
 }
+

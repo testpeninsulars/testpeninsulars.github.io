@@ -8,9 +8,13 @@
   <title>Document</title>
 </head>
 <body>
-  <div class="startButton">
-    <input class="letsGo" type="button" name="startTest" value="Погнали" onclick="askQuestion()">
+  <div class="wrapper firstButton">
+    <input class="highButton" type="button" name="startTest" value="Погнали" onclick="askQuestion()">
   </div>
+  <div class="wrapper secondButton">
+    <input class="highButton" type="button" name="changeNameButton" value="Сменить имя" onclick="setLocalStorageUserName()">
+  </div>
+
   <div class="wrapper">
     <div class="questionField">
       <div class="wrapper">
@@ -107,12 +111,14 @@
       </select>
     </div>
     <div class="finalWindow">
-      <div class="wrapper congratulations">
+      <div class="wrapper">
         <p>Поздравляем,<span id="userName"></span></p> 
+              </div>
+      <div class="wrapper">
         <p>Правильных ответов - <span id="rightAnswers"></span> из <span id="numberOfQuestions"></span>.</p>
       </div>
       <div class="wrapper">
-        Твой ранг:
+        <p>Твой ранг:</p>
       </div>
       <div class="wrapper">
         <img class="finalRankImage" src="" height="200px" width="200px">
